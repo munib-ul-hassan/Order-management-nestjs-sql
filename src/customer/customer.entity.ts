@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Order } from 'src/order/order.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from 'typeorm';
 
 @Entity()
 export class Customer {
@@ -11,9 +12,14 @@ export class Customer {
   @Column()
   email: string;
 
+
+  @OneToMany(() => Order, (orders) => orders.id)
+  @JoinColumn({ name: 'id' })
+  orders: Order;
+
   @Column()
   phone: string;
 
   @Column()
-  address: string;
+  card: string;
 }

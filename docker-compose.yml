@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .              # Point to the Dockerfile location
+    container_name: nestjs-app
+    restart: always
+    ports:
+      - '3000:3000'           # Expose the app on port 3000
+    depends_on:
+      - db                    # Wait for the database to be ready
+    environment:
+      DATABASE_HOST: localhost        # Database service name (db in this case)
+      DATABASE_PORT: 3306
+      DATABASE_USER: root      # Same as in the MySQL service
+      DATABASE_PASSWORD: 
+      DATABASE_NAME: nest-project # Same as in the MySQL service
+    env_file:
+      - .env                   # External env file
+    volumes:
+      - .:/usr/src
+      - /usr/src/node_modules
+    command: npm run start:dev # Or "start:prod" if you're running in production
+
+  db:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: nest-project
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
+    ports:
+      - '3306:3306'            # Expose MySQL on port 3306
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

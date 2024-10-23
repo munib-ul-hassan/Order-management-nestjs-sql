@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { CustomerService } from './customer.service';
 import { Customer } from './customer.entity';
+import { CreateCustomerDto } from './customer.dto';
 
 @Controller('customers')
 export class CustomerController {
@@ -17,12 +18,12 @@ export class CustomerController {
   }
 
   @Post()
-  create(@Body() customer: Customer): Promise<Customer> {
+  create(@Body() customer: CreateCustomerDto): Promise<Customer> {
     return this.customerService.create(customer);
   }
 
   @Put(':id')
-  update(@Param('id') id: number, @Body() customer: Partial<Customer>) {
+  update(@Param('id') id: number, @Body() customer: Partial<Customer>): Promise<Customer> {
     return this.customerService.update(id, customer);
   }
 

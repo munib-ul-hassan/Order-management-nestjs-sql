@@ -1,0 +1,691 @@
+{
+	"info": {
+		"_postman_id": "c0e1057f-a4d1-4c7c-acf5-639292e5d3c9",
+		"name": "nestjs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31967345"
+	},
+	"item": [
+		{
+			"name": "add product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"napkins\",\r\n    \"price\":1500,\r\n    \"stock\":15,\r\n    \"status\":true,\r\n    \"category\":\"baby\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/products",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"napkins\",\r\n    \"price\":1500,\r\n    \"stock\":15,\r\n    \"status\":true,\r\n    \"category\":\"baby\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/products",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "160"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a0-1tEOUFkYryPTng3r9C+82NLnJds\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Oct 2024 20:44:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"napkins\",\n    \"price\": 1500,\n    \"stock\": 15,\n    \"status\": true,\n    \"category\": \"baby\",\n    \"id\": 16,\n    \"createdAt\": \"2024-10-11T20:44:05.083Z\",\n    \"updatedAt\": \"2024-10-11T20:44:05.083Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "add customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"test9\",\r\n    \"email\":\"abc@abc.com\",\r\n    \"card\":\"4111111111111111\",\r\n    \"phone\":\"123\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/customers",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test9\",\r\n    \"email\":\"abc@abc.com\",\r\n    \"card\":\"4111111111111111\",\r\n    \"phone\":\"123\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/customers",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"56-cepl9xVN0Udgitqmc9g75NXV18M\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Oct 2024 20:40:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"test9\",\n    \"email\": \"abc@abc.com\",\n    \"card\": \"4111111111111111\",\n    \"phone\": \"123\",\n    \"id\": 10\n}"
+				}
+			]
+		},
+		{
+			"name": "update customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"card\":\"321321\"\r\n    \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/customers/1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update customer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"card\":\"321321\"\r\n    \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/customers/1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-Q+UNNLd+O/ya/HpGVn+60wSFxtI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Oct 2024 21:06:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"test2\",\n    \"email\": \"abc@abc.com\",\n    \"phone\": \"123\",\n    \"card\": \"321321\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"price\":2000\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/products/1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update product",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"price\":2000\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/products/1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9c-XuSt9vVuryhFx7r5qXctlaPESrw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Oct 2024 21:06:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Shirt\",\n    \"price\": 2000,\n    \"stock\": 15,\n    \"status\": true,\n    \"category\": \"men\",\n    \"createdAt\": \"2024-10-11T18:29:46.810Z\",\n    \"updatedAt\": \"2024-10-11T21:06:55.000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\":\"8\",\r\n    \"product\":\"15\",\r\n    \"quantity\":2,\r\n    \"totalPrice\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/orders",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer\":\"8\",\r\n    \"product\":\"15\",\r\n    \"quantity\":2,\r\n    \"totalPrice\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/orders",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "145"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"91-3QbLYVo+lFgy/Exbwi3XeVrdJ1E\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Oct 2024 20:46:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"quantity\": 2,\n    \"totalPrice\": 5,\n    \"customer\": \"8\",\n    \"product\": \"15\",\n    \"id\": 21,\n    \"createdAt\": \"2024-10-11T20:46:03.270Z\",\n    \"updatedAt\": \"2024-10-11T20:46:03.270Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/orders",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get order",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/orders",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "380"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17c-tFC8Yswfp4O5mHOEVMn0PVyW1s8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Oct 2024 19:47:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"quantity\": 2,\n        \"totalPrice\": 5,\n        \"createdAt\": \"2024-10-11T18:30:14.176Z\",\n        \"updatedAt\": \"2024-10-11T18:30:14.176Z\",\n        \"customer\": {\n            \"id\": 1,\n            \"name\": \"test2\",\n            \"email\": \"abc@abc.com\",\n            \"phone\": \"123\",\n            \"card\": \"4111111111111111\"\n        },\n        \"product\": {\n            \"id\": 1,\n            \"name\": \"Shirt\",\n            \"price\": 1500,\n            \"stock\": 15,\n            \"status\": true,\n            \"category\": \"men\",\n            \"createdAt\": \"2024-10-11T18:29:46.810Z\",\n            \"updatedAt\": \"2024-10-11T18:29:46.810Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "most products by customer id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/orders/customer/2",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"orders",
+						"customer",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/orders/customer/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"orders",
+								"customer",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1145"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"479-b4hjiERdlGGP1zPKRpKuvQCzXiQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Oct 2024 20:47:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"quantity\": 2,\n        \"totalPrice\": 5,\n        \"createdAt\": \"2024-10-11T20:44:40.372Z\",\n        \"updatedAt\": \"2024-10-11T20:44:40.372Z\",\n        \"customer\": {\n            \"id\": 2,\n            \"name\": \"test\",\n            \"email\": \"abc@abc.com\",\n            \"phone\": \"123\",\n            \"card\": \"4111111111111111\"\n        },\n        \"product\": {\n            \"id\": 3,\n            \"name\": \"Kurta\",\n            \"price\": 1500,\n            \"stock\": 15,\n            \"status\": true,\n            \"category\": \"men\",\n            \"createdAt\": \"2024-10-11T20:41:04.667Z\",\n            \"updatedAt\": \"2024-10-11T20:41:04.667Z\"\n        }\n    },\n    {\n        \"id\": 15,\n        \"quantity\": 2,\n        \"totalPrice\": 5,\n        \"createdAt\": \"2024-10-11T20:45:39.203Z\",\n        \"updatedAt\": \"2024-10-11T20:45:39.203Z\",\n        \"customer\": {\n            \"id\": 2,\n            \"name\": \"test\",\n            \"email\": \"abc@abc.com\",\n            \"phone\": \"123\",\n            \"card\": \"4111111111111111\"\n        },\n        \"product\": {\n            \"id\": 11,\n            \"name\": \"kurties\",\n            \"price\": 1500,\n            \"stock\": 15,\n            \"status\": true,\n            \"category\": \"women\",\n            \"createdAt\": \"2024-10-11T20:42:46.168Z\",\n            \"updatedAt\": \"2024-10-11T20:42:46.168Z\"\n        }\n    },\n    {\n        \"id\": 16,\n        \"quantity\": 2,\n        \"totalPrice\": 5,\n        \"createdAt\": \"2024-10-11T20:45:55.578Z\",\n        \"updatedAt\": \"2024-10-11T20:45:55.578Z\",\n        \"customer\": {\n            \"id\": 2,\n            \"name\": \"test\",\n            \"email\": \"abc@abc.com\",\n            \"phone\": \"123\",\n            \"card\": \"4111111111111111\"\n        },\n        \"product\": {\n            \"id\": 15,\n            \"name\": \"romper\",\n            \"price\": 1500,\n            \"stock\": 15,\n            \"status\": true,\n            \"category\": \"baby\",\n            \"createdAt\": \"2024-10-11T20:43:50.270Z\",\n            \"updatedAt\": \"2024-10-11T20:43:50.270Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "products by category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/orders/category",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"orders",
+						"category"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/orders/category",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"orders",
+								"category"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"61-fWPa6kM3RA+L2Z7J+FZzcKXJ4aA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Oct 2024 21:02:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"men\": 9,\n        \"percentage\": \"42.86\"\n    },\n    {\n        \"women\": 6,\n        \"percentage\": \"28.57\"\n    },\n    {\n        \"baby\": 6,\n        \"percentage\": \"28.57\"\n    }\n]"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}

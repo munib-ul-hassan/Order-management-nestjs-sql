@@ -1,25 +1,31 @@
 import { Module } from '@nestjs/common';
-
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Customer } from './customer/customer.entity';
-import { CustomerController } from './customer/customer.controller';
-import { CustomerService } from './customer/customer.service';
+import { CustomerModule } from './customer/customer.module';
+import { ProductsModule } from './products/products.module';
+import { OrderModule } from './order/order.module';
 @Module({
   imports: [
+    
     TypeOrmModule.forRoot({
-      type: 'mssql',
-      host: 'localhost',  // Change this to your SQL Server host if necessary
-      port: 1433,
-      username: 'your_username',
-      password: 'your_password',
-      database: 'your_database',
-      synchronize: true,  // In production, this should be set to false
-      entities: [Customer],
-      options: { enableArithAbort: true },
+      type: 'mariadb',      
+      host: 'localhost', 
+      port: 3306,
+      username: 'root',
+      password: '',
+      database: 'nest-project',
+      synchronize: true,  
+      entities: [       
+         "dist/**/*.entity{.js,.ts}"
+      ],
+      
     }),
-    TypeOrmModule.forFeature([Customer]),  // Register your Customer entity
+    // TypeOrmModule.forFeature([Customer]),
+    CustomerModule,
+    ProductsModule ,
+    OrderModule
+    // Register your Customer entity
   ],
-  controllers: [CustomerController],
-  providers: [CustomerService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
